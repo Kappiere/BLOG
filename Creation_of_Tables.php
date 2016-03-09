@@ -16,11 +16,11 @@ if ($conn->connection_error){
 //Create tables
 
 $sql = "
-        CREATE TABLE blog.utenti(id int auto_increment primary key,
+        CREATE TABLE blog.utenti(
                             nome varchar(20),
                             cognome varchar(20),
-                            email varchar(20),
-                            password varchar(20))";
+                            email varchar(20) primary key not null,
+                            password varchar(20) not null)";
 if($conn->query($sql) === TRUE){
 	echo "Table created successfully";
 } else{
